@@ -1,5 +1,4 @@
-
-var app = angular.module('myapp', ['ngRoute']);
+var app = angular.module('myApp', ['ngRoute']);
 app.config(function($routeProvider)
 		{
 	$routeProvider
@@ -10,8 +9,14 @@ app.config(function($routeProvider)
 	.when('/home',{
 		templateUrl :'g_home/home.html'
 	})
-	.otherwise({
-		redirectTo: "/"
+	.when('/register',
+	{
+		templateUrl :'g_register/register.html'
+		
 	})
+	.otherwise({
+		 redirectTo:'/'
+		 })
 	
-		});
+	
+		})
