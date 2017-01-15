@@ -14,6 +14,11 @@ app.config(function($routeProvider)
 		templateUrl :'g_register/register.html'
 		
 	})
+	.when('/login',
+	{
+	templateUrl:'g_register/login.html'	
+		
+	})
 	.otherwise({
 		 redirectTo:'/'
 		 })

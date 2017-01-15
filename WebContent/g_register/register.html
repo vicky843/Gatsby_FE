@@ -2,19 +2,29 @@
 <html ng-app="myApp">
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
-<style>
-h1
-{
-color:"red";
-}
-</style>
+<title>Register form</title>
+
 </head>
 <body>
-<h1>Registration page</h1>
-<h1>Registration page</h1>
-<h1>Registration page</h1>
-<h1>Registration page</h1>
+<div ng-controller="Personcontrol as ctrl">
+
+<form>
+<input type="text" ng-model="ctrl.person.username" placeholder="Username" required>
+<input type="email" ng-model="ctrl.person.email" placeholder="Emailid" required>
+<input type="text" ng-model="ctrl.person.address" placeholder="Address" required>
+<input type="number" ng-model="ctrl.person.mobile" placeholder="Mobilenumber" required>
+<h5> Role:</h5>
+ <select ng-model="ctrl.person.role">
+<option>Alumni</option>
+<option>Employee</option>
+<option>Student</option>
+</select>
+
+<input type="password" ng-model="ctrl.person.password" placeholder="Password" required>
+<input type="submit" class="btn btn-primary btn-block" value="Register">
+</form>
+
+</div>
 
 </body>
 </html>

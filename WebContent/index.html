@@ -1,20 +1,29 @@
+<!DOCTYPE html>
 <html ng-app="myApp">
 <head>
-<title>Gatsby</title>
 
+<meta charset="ISO-8859-1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="resources/css/bootstrap.css">
-<script src="resources/jquery/jquery-3.1.1.js"></script>
-<script src="resources/js/bootstrap.js"></script>
 
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> -->
+
+  <link href='//fonts.googleapis.com/css?family=Inder' rel='stylesheet'>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+<title>Gatsby</title>
 </head>
 <body>
 <h1>navigate1</h1>
 <h2>navigate1</h2>
 
-<div ng-include="'g_header/header.html'"></div>
+<div ng-include="'g_header/header.html'">
+</div>
 <h2>navigate2</h2>
-<div ng-view></div>
+<div ng-view>
+</div>
 <h2>navigate3</h2>
+ <script src="resources/jquery/jquery-3.1.1.js"></script>
+<script src="resources/js/bootstrap.js"></script>
 <script src="resources/angular/angular.js"></script>
 <script src="resources/angular/angular-route.js"></script>
 <script src="app.js"></script>
