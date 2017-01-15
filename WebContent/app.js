@@ -11,7 +11,8 @@ app.config(function($routeProvider)
 	})
 	.when('/register',
 	{
-		templateUrl :'g_register/register.html'
+		templateUrl :'g_register/register.html',
+		controller :'Personcontroller'
 		
 	})
 	.when('/login',
