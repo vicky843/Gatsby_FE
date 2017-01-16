@@ -6,14 +6,14 @@
 
 </head>
 <body>
-<div ng-controller="Personcontrol as ctrl">
+<div ng-controller="Personcontroller as ctrl">
 
-<form>
+<form method="post" ng-submit='ctrl.submitbtn()'>
 <input type="text" ng-model="ctrl.person.username" placeholder="Username" required><br>
 <input type="email" ng-model="ctrl.person.email" placeholder="Emailid" required><br>
 <input type="text" ng-model="ctrl.person.address" placeholder="Address" required><br>
 <input type="tel" ng-model="ctrl.person.mobile" placeholder="Mobilenumber" required><br>
-<input type="date" ng-model="ctrl.person.date" placeholder="Dateofbirth" required><br>
+<input type="date" ng-model="ctrl.person.dateofbirth" placeholder="Dateofbirth" required><br>
 
 <h5> Role:</h5><br>
  <select ng-model="ctrl.person.role">

@@ -1,29 +1,28 @@
 /**
  * 
  */
-
-
-app.controller('Personcontrol',['Personservice','$rootScope','$location',
-                                function($rootScope,$location)
+app.controller('Personcontroller',['Personservice','$rootScope','$location','$http',
+                                function(Personservice,$rootScope,$location,$http)
            {                    
 	console.log("in personcontroler")
 	var self=this;
-	self.person={username:'',mobile:'',password:'',email:'',dateofbirth:'',role:''};
-	
-self.register=function(person){
+	self.preg={username:'',mobile:'',password:'',email:'',dateofbirth:'',role:'',address:'',status:''};
+	//registering part
+self.register=function(preg){
 	console.log("registerfecntrl")
-Personservice.register(person)
-.then(function(errorresponse)
+Personservice.register(preg)
+.then(function(response)
 {
 	console.log("working")
 	}		
 )
 
-};
+}
+//submit button part
 self.submitbtn=function()
 {
-	self.register(person)
+	self.register(self.preg)
 	console.log("in save process")
 	$location.path('/home')
-	};
+	}
            }])
