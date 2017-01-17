@@ -17,8 +17,8 @@ app.config(function($routeProvider)
 	})
 	.when('/login',
 	{
-	templateUrl:'g_register/login.html'	
-		
+	templateUrl:'g_register/login.html'	,
+		controller :'Personcontroller'
 	})
 	.otherwise({
 		 redirectTo:'/'

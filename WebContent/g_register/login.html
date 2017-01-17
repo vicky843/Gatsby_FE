@@ -1,10 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="myApp">
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<style>
+h3{
+ margin-left: 40px;
+}
+</style>
 </head>
 <body>
-Loginpage
+<div class="jumbotron">
+<h3 >Loginpage</h3>
+</div>
+<div ng-controller="Personcontroller as ctrl">
+<form method="post" ng-submit='ctrl.submit()'><br>
+<input type="text" ng-model="ctrl.preg.username" placeholder="enter username"required><br>
+<input type="password" ng-model="ctrl.preg.password" placeholder="enter password"required><br>
+<input type="submit" class="btn btn-primary" value="Login"><br>
+
+
+</form><br>
+<a href="#/register">New to Gatsby</a>
+</div>
 </body>
 </html>

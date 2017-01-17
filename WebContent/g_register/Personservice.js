@@ -18,8 +18,20 @@ app.service('Personservice',['$http',function($http){
 	
 		}
 				
-		)}
+		)},
 		
+	loginauthenicate:function(preg)
+	{
+		console.log("fepersonservice");
+		return $http.post(URL+'/loginauth',preg).
+		then (function(response)
+		{
+			console.log("fe2service");
+			var lo=response.data;
+			return lo;
+			}		
+		)
+	}
 	}
 
 }
