@@ -6,13 +6,18 @@ app.controller('Personcontroller',['Personservice','$rootScope','$location','$ht
            {                    
 	console.log("in personcontroler")
 	var self=this;
-	self.preg={username:'',mobile:'',password:'',email:'',dateofbirth:'',role:'',address:'',status:''};
+	self.preg={
+			username:'',mobile:'',password:'',email:'',dateofbirth:'',role:'',address:'',status:''
+				};
+	
 	//registering part
 self.register=function(preg){
 	console.log("registerfecntrl")
 Personservice.register(preg)
-.then(function(response)
+.then(function(reg)
 {
+	self.preg=reg;
+	console.log(reg)
 	console.log("working")
 	}		
 )

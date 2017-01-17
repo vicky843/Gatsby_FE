@@ -8,11 +8,14 @@ app.service('Personservice',['$http',function($http){
 	return{
 		register:function(preg){
 		
-		return $http.post(URL+'person',preg)//it will get data from self.person line11.
+		return $http.post(URL+'/person',preg)//it will get data from self.person line11.
 		.then(function(response){
 		console.log("registerservice")
-			return response.data;
-			
+			/*return response.data;
+			*/
+	var pr=response.data;
+		return pr;
+	
 		}
 				
 		)}
