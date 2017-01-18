@@ -1,10 +1,11 @@
 /**
  * 
  */
-app.controller('Personcontroller', [ 'Personservice', '$rootScope','$location',
+app.controller('Personcontroller', [ 'Personservice', '$rootScope','$cookies',
 		'$location', '$http',
-		function(Personservice, $rootScope, $location, $http,$location) {
+		function(Personservice, $rootScope, $location, $http,$cookies) {
 			console.log("in personcontroler")
+			/* $rootScope.logincookie=$cookies.getObject("logincookie")*/
 			var self = this;
 			self.preg = {
 				username : '',
@@ -23,7 +24,7 @@ app.controller('Personcontroller', [ 'Personservice', '$rootScope','$location',
 				Personservice.register(preg).then(function(reg) {
 					self.preg = reg;
 					console.log(reg)
-					console.log("working")
+					console.log("working")//$cookies.remove('loginData')$rootScope.loginData='';
 				})
 
 			};
@@ -62,11 +63,20 @@ app.controller('Personcontroller', [ 'Personservice', '$rootScope','$location',
 					console.log("user.errorcode:"+self.preg.errorcode)
 					if(self.preg.errorcode=="200")
 						{
-						if(ctrl.preg.status=="Admin")
-							$location.path("/Admin");
+						if(self.preg.status=="Admin")
+						/*	$location.path("/Admin");*/
+							console.log("adminfecontrl")
+							$rootScope.logincookie=logi
+							$cookies.put('logincookie',logi);/*
+							 $cookies.putObject("logincookie",logi)*///it will sets a value to cookie
+			        	$location.path("/register");
 						}
-					else (ctrl.preg.status=="Alumni"||ctrl.preg.status=="Student"||ctrl.preg.status=="Employee")
-				$location.path("/home");
+					else (self.preg.status=="Alumni"||self.preg.status=="Student"||self.preg.status=="Employee")
+                    
+							$rootScope.logincookie=logi;           
+					$cookies.putObject("logincookie",logi)
+                  				
+					$location.path("/home");
 				})
 			}
 		
@@ -74,7 +84,15 @@ app.controller('Personcontroller', [ 'Personservice', '$rootScope','$location',
 				self.loginauthenicate(self.preg)
 				console.log("in login process")
 				/*$location.path('/home')*/
-			}
+			};
 			
-
+//logout functionality
+			self.logout=function(){
+				console.log("logout");
+				$rootScope.logincookie={};
+				$cookieStore.remove('logincookie');
+				Personservice.logout()
+				$location.path("/login")
+				
+			}
 } ])
