@@ -20,6 +20,21 @@ app.config(function($routeProvider)
 	templateUrl:'g_register/login.html'	,
 		controller :'Personcontroller'
 	})
+	
+	.when('/createblog',
+	{
+		templateUrl:'g_blog/createblog.html',
+		controller:'Blogcontroller'
+			
+		
+	})
+	.when('/viewblog',
+			{
+		templateUrl:'g_blog/viewblog.html',
+			controller:'Blogcontroller'
+				
+			})
+			
 	.otherwise({
 		 redirectTo:'/'
 		 })
