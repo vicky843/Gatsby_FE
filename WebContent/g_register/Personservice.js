@@ -3,8 +3,8 @@
  */
 app.service('Personservice',['$http',function($http){
 	console.log("personservice")
-	var URL='http://localhost:8093/Gatsby_BE/';
-	
+	/*var URL='http://localhost:8093/Gatsby_BE/';*/
+	var URL='http://localhost:4000/Gatsby_BE/';
 	return{
 		register:function(preg){
 		

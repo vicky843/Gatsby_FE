@@ -1,9 +1,9 @@
 /**
  * 
  */
-app.controller('Personcontroller', [ 'Personservice', '$rootScope','$cookies',
-		'$location', '$http',
-		function(Personservice, $rootScope, $location, $http,$cookies) {
+app.controller('Personcontroller', [ 'Personservice', '$rootScope','$location', '$http','$cookies',
+		
+		function(Personservice, $rootScope, $location, $http, $cookies) {
 			console.log("in personcontroler")
 			/* $rootScope.logincookie=$cookies.getObject("logincookie")*/
 			var self = this;
@@ -69,7 +69,7 @@ app.controller('Personcontroller', [ 'Personservice', '$rootScope','$cookies',
 							$rootScope.logincookie=logi
 							$cookies.put('logincookie',logi);/*
 							 $cookies.putObject("logincookie",logi)*///it will sets a value to cookie
-			        	$location.path("/register");
+			        	$location.path("/");
 						}
 					else (self.preg.status=="Alumni"||self.preg.status=="Student"||self.preg.status=="Employee")
                     

@@ -34,7 +34,11 @@ app.config(function($routeProvider)
 			controller:'Blogcontroller'
 				
 			})
-			
+			.when('/admin',
+					{
+				templateUrl:'g_admin/admin.html',
+				controller:'Admincontroller'
+					})
 	.otherwise({
 		 redirectTo:'/'
 		 })

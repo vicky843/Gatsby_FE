@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>Welcome To Admin</h1>
+<div >
+<div class="col-sm-4">
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Search for..." ng-model="user">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="button">Go!</button>
+      </span>
+    </div>
+    <br>
+  </div>
+
+<table class="table table-bordered table-hover table-striped">
+ <tr><th>user Id</th>
+<th>user name</th>
+<th>user address</th>
+<th>user email</th>
+<th>user number</th>
+<th>user role</th>
+<th>user dateofbirth</th>
+<th>user status</th>
+
+</tr> 
+<tr class="success" ng-repeat="person in user|filter:user">
+                <td>{{person.id}}</td> 
+                 <td>{{person.username}}</td>
+                <td>{{person.address}}</td>
+            <td>{{person.email}}</td>
+            <td>{{person.mobile}}</td>
+            
+            <td>{{person.role}}</td>
+            <td>{{person.dateofbirth}}</td>
+           
+            <td>{{person.status}}</td>
+</tr>
+</table>
+</div>
+
+</body>
+</html>
