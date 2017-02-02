@@ -34,23 +34,24 @@ app.controller('Personcontroller', [ 'Personservice', '$rootScope','$location', 
 				console.log("in save process")
 				$location.path('/home')
 			};
-/*//fetching users
+//fetching users
 			self.getallusers=function()
 			{
-				self.fetchAllUsers().then(
+				Personservice.fetchAllUsers().then(
 				function(fetch){
-					var self=fetch;
+					var preg=fetch;
 					console.log(self);
-					return fetch;
+				},function(errorResponse){
+					console.log("error")
+				})
 					
 					
-				}		
-				)
+				
 				
 				
 				
 			}
-			*/
+			
 //loginfunctionality
 			self.loginauthenicate=function(preg){
 				
@@ -69,7 +70,7 @@ app.controller('Personcontroller', [ 'Personservice', '$rootScope','$location', 
 							$rootScope.logincookie=logi
 							$cookies.put('logincookie',logi);/*
 							 $cookies.putObject("logincookie",logi)*///it will sets a value to cookie
-			        	$location.path("/");
+			        	$location.path("/admin");
 						}
 					else (self.preg.status=="Alumni"||self.preg.status=="Student"||self.preg.status=="Employee")
                     

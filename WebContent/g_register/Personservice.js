@@ -31,6 +31,20 @@ app.service('Personservice',['$http',function($http){
 			return lo;
 			}		
 		)
+	},
+	
+	fetchAllUsers:function()
+	{
+		console.log("fetchingusersservice")
+		return $http.get(URL+'/personlist').then
+		(function(response)
+				{
+			console.log("fetchuserservice2")
+			var fe=response.data;
+			return fe;
+			
+				},null)
+		
 	}
 	}
 

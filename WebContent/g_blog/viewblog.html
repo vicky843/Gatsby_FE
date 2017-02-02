@@ -5,6 +5,32 @@
 <title>Insert title here</title>
 </head>
 <body>
+<div ng-controller="Blogcontroller as blogctrl">
+    <input type="text" class="form-control" placeholder="Search for..." ng-model="blogsearch">
+<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>blog name</th>
+			
+				<th>Description</th>
+				<th>used for</th>
+				<th>date</th>
+				
+				
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="myblogs in blogctrl.bloging |filter:blogsearch">
+				<td>{{myblogs.blogname}}</td>
+				
+				<td>{{myblogs.description}}</td>
+				<td>{{myblogs.role}}</td>
+				<td>{{myblogs.dateadded}}</td>
+				
 view blog page
+</tr>
+</tbody>
+</table>
+</div>
 </body>
 </html>

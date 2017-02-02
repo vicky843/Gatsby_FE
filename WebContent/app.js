@@ -15,6 +15,13 @@ app.config(function($routeProvider)
 		controller :'Personcontroller'
 		
 	})
+	.when('/blog',{
+		templateUrl :'g_blog/blog.html',
+		controller:'Blogcontroller'
+	})
+	.when('/about',{
+		templateUrl :'g_about/about.html'
+	})
 	.when('/login',
 	{
 	templateUrl:'g_register/login.html'	,

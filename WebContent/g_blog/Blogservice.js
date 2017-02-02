@@ -18,8 +18,18 @@ return{
 		
 		
 		
-	}
+	},
 	
+allblog:function(){
+	
+	return $http.get(Utl+'/bloglist').then
+	(function(response)
+			{
+	/*	var bd=response.data;
+		console.log(bd);*/
+		return response.data;
+			})
+}
 }                           
                            
                            
